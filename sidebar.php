@@ -20,12 +20,11 @@ query_posts($query) ;
 <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
 <?php the_post_thumbnail('thumb100'); ?>
 <?php else: // サムネイルを持っていないときの処理 ?>
-<img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="100" height="100" />
+<img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="100" height="100">
 <?php endif; ?>
 </a></span></dt><dd><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 <p><?php echo mb_substr(strip_tags($post-> post_content),0,35).'...'; ?></p>
 </dd>
-<p class="clear"></p>
 </dl>
 <?php endwhile; else: ?>
 <p>記事がありません</p>

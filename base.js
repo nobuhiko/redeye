@@ -1,4 +1,4 @@
-﻿
+
 
 /*--------------------------------
 広告のフロート
@@ -14,7 +14,7 @@
 		var side = $('#side'); // サイドバーのID
 		var wrapper = $('#ad1'); // 広告を包む要素のID
 
-　　　　　　　　if (main.length === 0 || side.length === 0 || wrapper.length === 0) {
+if (main.length === 0 || side.length === 0 || wrapper.length === 0) {
 return;
 }
 
@@ -246,7 +246,7 @@ $(document).ready(function(){
 /*---------------------------
 ドロップダウン
 ------------------------------*/
-
+/*
 $(document).ready(function(){
     $("ul.children").hide();
     $("li.page_item").hover(function() {
@@ -255,4 +255,4 @@ $(document).ready(function(){
     function() {
         $("ul.children",this).slideUp("slow");
     });
-});
+});*/

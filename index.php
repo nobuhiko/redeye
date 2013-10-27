@@ -17,7 +17,7 @@
 <?php if ( has_post_thumbnail() ): // サムネイルを持っているときの処理 ?>
 <?php
 $title= get_the_title();
-the_post_thumbnail(array( 150,150 ),
+the_post_thumbnail('eyecatch',
 array( 'alt' =>$title, 'title' => $title)); ?>
 <?php else: // サムネイルを持っていないときの処理 ?>
 <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="150" height="150" />

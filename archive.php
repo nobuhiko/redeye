@@ -1,34 +1,6 @@
 <?php get_header(); ?>
 <div class="kuzu">
-<?php /*--- パンくず --- */?>
-<div id="breadcrumb">
-<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="<?php echo home_url(); ?>" itemprop="url">
-<span itemprop="title">ホーム</span>
-</a> &gt;
-</div>
-<?php /*--- カテゴリーが階層化している場合に対応させる --- */ ?>
-<?php $postcat = get_the_category(); ?>
-<?php $catid = $postcat[0]->cat_ID; ?>
-<?php $allcats = array($catid); ?>
-<?php 
-while(!$catid==0) {	/* すべてのカテゴリーIDを取得し配列にセットするループ */
-    $mycat = get_category($catid); 	/* カテゴリーIDをセット */
-    $catid = $mycat->parent; 	/* 上で取得したカテゴリーIDの親カテゴリーをセット */
-    array_push($allcats, $catid);
-}
-array_pop($allcats);
-$allcats = array_reverse($allcats);
-?>
-<?php /*--- 親カテゴリーがある場合は表示させる --- */ ?>
-<?php foreach($allcats as $catid): ?>
-<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-<a href="<?php echo get_category_link($catid); ?>" itemprop="url">
-<span itemprop="title"><?php echo get_cat_name($catid); ?></span>
-</a> &gt;
-</div>
-<?php endforeach; ?>
-</div>
+<?php if ( function_exists( 'bread_crumb' ) ) { bread_crumb(); } ?>
 </div><!--/kuzu-->
 <div class="post">
 <!--ループ開始-->
@@ -60,7 +32,7 @@ $allcats = array_reverse($allcats);
 
 <?php
 $title= get_the_title();
-the_post_thumbnail(array( 150,150 ),
+the_post_thumbnail('eyecatch',
 array( 'alt' =>$title, 'title' => $title)); ?>
 <?php else: // サムネイルを持っていないときの処理 ?>
 <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="150" height="150" />
@@ -72,7 +44,7 @@ array( 'alt' =>$title, 'title' => $title)); ?>
 <?php the_title(); ?></a></h3>
 <div class="blog_info contentsbox">
 <p>
-<?php the_time('Y/m/d') ?> | <?php the_category(', ') ?> <?php the_tags('', ', '); ?>
+<?php the_time('Y/m/d') ?> | <?php echo implode(' ', array_values(get_the_taxonomies_st())); ?>
 </p></div>  <p class="dami"><?php echo mb_substr(strip_tags($post-> post_content),0,100).'...'; ?></p>
 <p class="motto"><a class="more-link" href="<?php the_permalink() ?>">続きを見る</a></p>
 </div><!-- .entry-content -->

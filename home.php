@@ -16,7 +16,7 @@
 
 <?php
 $title= get_the_title();
-the_post_thumbnail(array( 150,150 ),
+the_post_thumbnail('eyecatch',
 array( 'alt' =>$title, 'title' => $title)); ?>
 
 <?php else: // サムネイルを持っていないときの処理 ?>
@@ -33,7 +33,7 @@ array( 'alt' =>$title, 'title' => $title)); ?>
 <?php the_title(); ?></a></h3>                
 <div class="blog_info contentsbox">
 <p>
-<?php the_time('Y/m/d') ?> | <?php the_category(', ') ?> <?php the_tags('', ', '); ?>
+<?php the_time('Y/m/d') ?> | <?php echo implode(' ', array_values(get_the_taxonomies_st())); ?>
 </p>
 </div> <p class="dami"><?php echo mb_substr(strip_tags($post-> post_content),0,100).'...'; ?></p>
 <p class="motto"><a class="more-link" href="<?php the_permalink() ?>">続きを見る</a></p>

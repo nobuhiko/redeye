@@ -9,7 +9,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="entry">
 <div class="sumbox">
-<?php the_post_thumbnail( array(150, 150) ); ?>
+<?php the_post_thumbnail( 'eyecatch' ); ?>
 </div><!-- /.sumbox -->
 <div class="entry-content">
 <h3 class="entry-title-ac">  <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
@@ -17,12 +17,9 @@
 <p><?php echo mb_substr(get_the_excerpt(), 0, 35); ?>...</p>
 <p><a class="more-link" href="<?php the_permalink() ?>">続きを見る</a></p>
 <div class="blog_info contentsbox">
-          <ul class="clearfix">
-          <li class="cal"><?php the_time('Y/m/d') ?></li>
-          <li class="cat"><?php the_category(', ') ?></li>
-          <li class="tag"><?php the_tags('', ', '); ?></li>
-          </ul>
-</div>  
+<p>
+<?php the_time('Y/m/d') ?> | <?php echo implode(' ', array_values(get_the_taxonomies_st())); ?>
+</p></div>
 </div><!-- .entry-content -->
 <div class="clear"></div>
 </div><!--/entry-->

@@ -1,4 +1,4 @@
-﻿/*---------------------------------------------------------
+/*---------------------------------------------------------
 Theme Name: stinger3ver20130906
 Theme URI: http://wp-stinger.com
 Description: stinger3
@@ -112,7 +112,7 @@ a:hover img {
 -----------------------------*/
 
 .kizi img,.wp-caption {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   height: auto;
   max-width: 100%!important;
   width:100%\9;
@@ -1381,7 +1381,7 @@ border-radius:0;
 	color: #666;
 }
 #wrap #wrap-in #side #topnews div dl {
-	padding-bottom: 0px;
+	padding-bottom: 10px;
 }
 #container #wrap #wrap-in #main .post .ama3 {
 	background-color: #FFF;
@@ -1454,4 +1454,21 @@ font-size:13px;
 }
 #wp-calendar tbody tr #today {
 	background-color: #CCC;
+}
+
+/*-----------------------------
+タイトル下
+------------------------------*/
+
+.kizi .blogbox p {
+	font-size: 12px;
+}
+.kizi .blogbox {
+	background-color: #f3f3f3;
+}
+.kizi .blogbox p .kdate {
+	background-color: #595959;
+	margin-right: 10px;
+	padding: 5px;
+	color: #FFF;
 }

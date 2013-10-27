@@ -1,13 +1,6 @@
 <?php get_header(); ?>
 <div class="kuzu">
-  <?php /*--- パンくず --- */?>
-<div class="breadcrumb">
-<a href="<?php echo home_url(); ?>">HOME</a>&nbsp;>&nbsp;</li>
-<?php foreach ( array_reverse(get_post_ancestors($post->ID)) as $parid ) { ?>
-<a href="<?php echo get_page_link( $parid );?>" title="<?php echo get_page($parid)->post_title; ?>">
-<?php echo get_page($parid)->post_title; ?></a>&nbsp;>&nbsp;
-<?php } ?>
-</div>
+<?php if ( function_exists( 'bread_crumb' ) ) { bread_crumb(); } ?>
 </div><!--/kuzu-->
 <div class="post">
 <!--ループ開始-->

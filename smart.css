@@ -1188,3 +1188,23 @@ font-size:13px;
 	margin-right: -5px;
 	margin-left: -5px;
 }
+
+
+/*-----------------------------
+タイトル下
+------------------------------*/
+.kizi .blogbox {
+	background-color: #f3f3f3;
+	padding: 5px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: dotted;
+	border-bottom-style: dotted;
+	border-top-color: #999;
+	border-bottom-color: #999;
+	margin-bottom: 10px;
+}
+.kizi .blogbox p {
+	font-size: 12px;
+	margin-bottom: 0px;
+}

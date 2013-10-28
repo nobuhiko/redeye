@@ -20,9 +20,9 @@
 </a></h3>
 
 <h4><a href="<?php echo home_url(); ?>/">
-<?php bloginfo('description'); ?></a></h4>     
+<?php bloginfo('description'); ?></a></h4>
 <!--このリンクは外す事は禁止しております-->
-<p class="stinger"><a href="http://wp-stinger.com">WordPress-Theme STINGER3</a></p>
+<p class="stinger"><a href="http://wp-stinger.com" rel="nofollow">WordPress-Theme STINGER3</a></p>
 <p class="copy">Copyright &copy; <?php bloginfo('name');?> <?php the_date('Y');?> All Rights Reserved.</p>
 </div><!-- /#footer-in -->
 </div>

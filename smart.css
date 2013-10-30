@@ -53,19 +53,17 @@ img {
 /*----------------------------
 各コンテンツの最大サイズを制限
 -----------------------------*/
-
 .kizi img,
-.wp-caption img,
 .kizi video,
 .kizi object,
 .kizi iframe {
     /*margin-bottom: 20px;*/
     height: auto;
     max-width: 100% !important;
-    width:100%\9;
 }
 
 .wp-caption {
+    max-width: 100% !important;
     clear: both;
     margin: 20px 0;
 }

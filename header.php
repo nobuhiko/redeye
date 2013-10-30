@@ -32,7 +32,7 @@
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css" media="all">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=3" media="all">
 
 <?php else: ?>
 

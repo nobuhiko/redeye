@@ -54,7 +54,11 @@ img {
 各コンテンツの最大サイズを制限
 -----------------------------*/
 
-.kizi img,.kizi video,.kizi object,.kizi iframe {
+.kizi img,
+.wp-caption img,
+.kizi video,
+.kizi object,
+.kizi iframe {
     /*margin-bottom: 20px;*/
     height: auto;
     max-width: 100%!important;

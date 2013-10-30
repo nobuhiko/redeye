@@ -12,9 +12,7 @@
 
 <div class="blogbox">
 <p>
-<span class="kdate">公開日：<time class="entry-date" datetime="<?php the_time('c') ;?>"><?php the_time('Y/m/d') ;?></time>
-<?php if ($mtime = get_mtime('Y/m/d')) echo ' 最終更新日：' , $mtime; ?>
-</span>
+<span class="kdate">投稿日：<time class="entry-date" datetime="<?php the_time('c') ;?>"><?php the_date(); ?> <?php the_time();?></time></span>
 </p>
 </div>
 
@@ -38,9 +36,6 @@
 <li>
 <a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fnob-log.info%2Ffeed%2F'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-big_2x.png' alt='follow us in feedly' width='131' height='56'></a>
 </li>
-<li>
-<a href="http://photo.blogmura.com/p_underwater/"><img src="http://photo.blogmura.com/p_underwater/img/p_underwater88_31.gif"  width="88" height="31" border="0" alt="にほんブログ村 写真ブログ 水中写真へ" /></a><br /><a href="http://photo.blogmura.com/p_underwater/">にほんブログ村</a>
-</li>
 </ul>
 </div>
 </div>
@@ -48,7 +43,7 @@
 <p>
 <span itemprop="keywords"><?php echo implode(' ', array_values(get_the_taxonomies_st())); ?></span>
 </p>
-</div>    
+</div>
 <div style="padding:20px 0px;">
 <?php get_template_part('ad');?>
 </div>

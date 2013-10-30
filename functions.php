@@ -1,18 +1,5 @@
 <?php
-
-//更新日の追加
-function get_mtime($format) {
-    $mtime = get_the_modified_time('Ymd');
-    $ptime = get_the_time('Ymd');
-    if ($ptime > $mtime) {
-        return get_the_time($format);
-    } elseif ($ptime === $mtime) {
-        return null;
-    } else {
-        return get_the_modified_time($format);
-    }
-}
-
+/* カテゴリータグを全部まとめて表示する */
 function get_the_taxonomies_st($post = 0, $args = array() ) {
 	$post = get_post( $post );
 
@@ -95,38 +82,18 @@ add_action('wp_enqueue_scripts','register_user_script');
 
 //アイキャッチサムネイル
 add_theme_support('post-thumbnails');
-add_image_size( 'eyecatch', 150, 150, true );
-add_image_size('thumb100',100,100,true);
-add_image_size('thumb110',110,110,true);
-
-//ENJIからのお知らせ
-function dashboard_widget_function() {
-echo "
-Stingerに関するバグや更新情報は@ENJILOG（https://twitter.com/ENJILOG）で呟いていますのでフォローして下さい。
-最新のテーマはhttp://wp-stinger.com/dl/stinger2.zipでダウンロードできます。 ";
-}
-function add_dashboard_widgets() {
-wp_add_dashboard_widget('dashboard_widget_welcome', '「Stinger」について', 'dashboard_widget_function');
-}
-add_action('wp_dashboard_setup', 'add_dashboard_widgets' );
-
-//WordPress の投稿スラッグを自動的に生成する
-function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
-    if ( preg_match( '/(%[0-9a-f]{2})+/', $slug ) ) {
-        $slug = utf8_uri_encode( $post_type ) . '-' . $post_ID;
-    }
-    return $slug;
-}
-//add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4  );
+add_image_size('eyecatch', 150, 150, true);
+add_image_size('thumb100', 100, 100, true);
+add_image_size('thumb110', 110, 110, true);
 
 //カスタムメニュー
 register_nav_menus(array('navbar' => 'ナビゲーションバー'));
 
 //カスタムヘッダー
 $args = array(
-	'width'         => 986,
+	'width'         => 950,
 	'height'        => 150,
-	'default-image' => get_template_directory_uri() . '/images/stinger3.png',
+	'default-image' => '',
 );
 add_theme_support( 'custom-header', $args );
 
@@ -157,11 +124,11 @@ add_theme_support( 'custom-background' );
 //ページャー機能
 function pagination($pages = '', $range = 4)
 {
-     $showitems = ($range * 2)+1; 
- 
+     $showitems = ($range * 2)+1;
+
      global $paged;
      if(empty($paged)) $paged = 1;
- 
+
      if($pages == '')
      {
          global $wp_query;
@@ -170,21 +137,21 @@ function pagination($pages = '', $range = 4)
          {
              $pages = 1;
          }
-     }  
- 
+     }
+
      if(1 != $pages)
      {
          echo "<div class=\"pagination\"><span>Page ".$paged." of ".$pages."</span>";
          if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link
 
 (1)."'>&laquo; First</a>";
-         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo; 
+         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;
 
 Previous</a>";
- 
+
          for ($i=1; $i <= $pages; $i++)
          {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems 
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems
 
 ))
              {
@@ -193,45 +160,17 @@ Previous</a>";
 ($i)."' class=\"inactive\">".$i."</a>";
              }
          }
- 
-         if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 
+
+         if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged +
 
 1)."\">Next &rsaquo;</a>";
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a 
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a
 
 href='".get_pagenum_link($pages)."'>Last &raquo;</a>";
          echo "</div>\n";
      }
 }
 
-function add_hatena_notify() {
- 
-    if (is_single() || is_page()) {
-        $url = get_permalink();
-    } else {
-        $url = get_bloginfo('url');
-    }
- 
-    echo '
-        <!--
-        <rdf:RDF
-          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-          xmlns:dc="http://purl.org/dc/elements/1.1/"
-          xmlns:foaf="http://xmlns.com/foaf/0.1/">
-        <rdf:Description rdf:about="'.$url.'">
-           <foaf:maker rdf:parseType="Resource">
-             <foaf:holdsAccount>
-               <foaf:OnlineAccount foaf:accountName="あなたのはてなid">
-                 <foaf:accountServiceHomepage rdf:resource="http://www.hatena.ne.jp/" />
-               </foaf:OnlineAccount>
-             </foaf:holdsAccount>
-           </foaf:maker>
-        </rdf:Description>
-        </rdf:RDF>
-        -->
-    ';
-}
-add_action('wp_head', 'add_hatena_notify', 100);
 //ヘッダーを綺麗に
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 remove_action( 'wp_head', 'feed_links', 2 );
@@ -241,7 +180,7 @@ remove_action( 'wp_head', 'index_rel_link' );
 remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-remove_action( 'wp_head', 'wp_generator' ); 
+remove_action( 'wp_head', 'wp_generator' );
 
 //moreリンク
 function custom_content_more_link( $output ) {
@@ -251,13 +190,13 @@ function custom_content_more_link( $output ) {
 add_filter( 'the_content_more_link', 'custom_content_more_link' );
 
 //セルフピンバック禁止
-function no_self_ping( &$links ) {
+function red_no_self_ping( &$links ) {
     $home = home_url();
     foreach ( $links as $l => $link )
         if ( 0 === strpos( $link, $home ) )
             unset($links[$l]);
 }
-add_action( 'pre_ping', 'no_self_ping' );
+add_action( 'pre_ping', 'red_no_self_ping' );
 
 
 //ウイジェット追加
@@ -297,5 +236,3 @@ register_sidebars(1,
     ));
 
 if ( ! isset( $content_width ) ) $content_width = 546;
-
-

@@ -68,6 +68,8 @@ img {
 .wp-caption {
     clear: both;
     margin: 20px 0;
+    max-width: 100%!important;
+    width:100%\9;
 }
 
 .wp-caption-text {

@@ -50,6 +50,8 @@
         </ul>
     </div>
 </div>
+<?php endif; ?>
+<?php if(is_single()):?>
 <script type="text/javascript">
 (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;

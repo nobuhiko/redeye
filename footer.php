@@ -32,7 +32,7 @@
 <!-- ページトップへ戻る　終わり -->
 
 <?php $permalink = (is_home()) ? home_url() : get_permalink(); ?>
-<?php if(!is_mobile()):?>
+<?php if(!is_mobile() && is_single()):?>
 <div id="snsbox">
     <div class="sns">
         <ul class="snsb clearfix">

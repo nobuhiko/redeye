@@ -1253,7 +1253,7 @@ table tr td {
 }
 
 /*------------------------*/
-#container #wrap #wrap-in #side #topnews .motto {
+#container #wrap #wrap-in #side .topnews .motto {
     clear: both;
 
 }
@@ -1350,7 +1350,7 @@ table tr td {
 #container #wrap #wrap-in #side #snsbox02 {
     padding-top: 20px;
 }
-#container #wrap #wrap-in #main .post .sumbox02 #topnews div dl dd .basui .motto a {
+#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .basui .motto a {
     font-weight: normal;
     text-decoration: none;
     font-size: 12px;
@@ -1359,12 +1359,12 @@ table tr td {
 #container #wrap #wrap-in #main .post .entry .entry-content .motto .more-link {
     font-size: 12px;
 }
-#container #wrap #wrap-in #side #topnews .motto a {
+#container #wrap #wrap-in #side .topnews .motto a {
     font-size: 12px;
 }
 
 
-#container #wrap #wrap-in #main .post .sumbox02 #topnews div dl dd .basui .motto a:hover {
+#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .basui .motto a:hover {
     color: #FFF;
 }
 #container #wrap #wrap-in #side #topnews div dl dd p {
@@ -1382,17 +1382,17 @@ table tr td {
 --------------------------------*/
 
 
-#main .post .sumbox02 #topnews div dl dd {
+#main .post .sumbox02 .topnews div dl dd {
     padding-left: 130px;
 }
-.post .sumbox02 #topnews div dl dd .motto {
+.post .sumbox02 .topnews div dl dd .motto {
     font-size: 12px;
     color: #666;
 }
-#main .post .sumbox02 #topnews div dl dd .motto a {
+#main .post .sumbox02 .topnews div dl dd .motto a {
     color: #666;
 }
-#wrap #wrap-in #side #topnews div dl {
+#wrap #wrap-in #side .topnews div dl {
     padding-bottom: 10px;
 }
 #container #wrap #wrap-in #main .post .ama3 {

@@ -60,7 +60,7 @@ if ( is_array($related_posts) ) :
 ?>
 <h4 class="kanren">関連記事</h4>
 <div class="sumbox02">
-<div id="topnews">
+<div class="topnews">
 <div>
     <?php foreach ( $related_posts as $related ) : ?>
 <dl>

@@ -915,7 +915,7 @@ a {
     border-bottom-style: none;
     border-left-style: none;
     margin-bottom:10px;
-}#container #wrap #wrap-in #main .post .sumbox02 #topnews div dl dt {
+}#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dt {
     text-align: center;
     padding-top: 20px;
     padding-right: 20px;
@@ -923,12 +923,12 @@ a {
     padding-left: 0px;
 }
 
-#topnews div dl dt img {
+.topnews div dl dt img {
     max-width: 110px!important;
     height: auto;
 }
 
-#container #wrap #wrap-in #main .post .sumbox02 #topnews div dl dd .saisin {
+#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .saisin {
     background-color: #FFF;
     /*font-size: 20px;*/
     line-height: 30px;
@@ -939,11 +939,11 @@ a {
     padding-bottom: 0px;
     padding-left: 0px;
 }
-#container #wrap #wrap-in #side #topnews div dl dt {
+#container #wrap #wrap-in #side .topnews div dl dt {
     padding: 20px;
     text-align: center;
 }
-#container #wrap #wrap-in #side #topnews div dl dd {
+#container #wrap #wrap-in #side .topnews div dl dd {
     /*font-size: 22px;*/
     line-height: 40px;
 }
@@ -957,7 +957,7 @@ a {
     padding-bottom: 20px;
     padding-left: 0px;
 }
-#container #wrap #wrap-in #side #topnews div dl dt img {
+#container #wrap #wrap-in #side .topnews div dl dt img {
     padding: 20px;
     border: 1px solid #999;
     background-color: #FFF;
@@ -1064,7 +1064,7 @@ a {
     margin: 0px;
 }
 
-#container #wrap #wrap-in #side #topnews .motto {
+#container #wrap #wrap-in #side .topnews .motto {
     clear: both;
 
 }
@@ -1092,7 +1092,7 @@ a {
 関連記事
 ------------------------------------*/
 
-#container #wrap #wrap-in #side #ad1 div #topnews div dl dd a {
+#container #wrap #wrap-in #side #ad1 div .topnews div dl dd a {
     color: #000;
     font-weight: bold;
 }
@@ -1106,24 +1106,24 @@ a {
     /*font-size: 16px;*/
     line-height: 25px;
 }
-#container #wrap #wrap-in #main .post .sumbox02 #topnews div dl dd .saisin a {
+#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .saisin a {
     color: #000;
     text-decoration: none;
 }
-#wrap #wrap-in #main .post .sumbox02 #topnews div dl dt {
+#wrap #wrap-in #main .post .sumbox02 .topnews div dl dt {
     float: left;
     width: 112px;
     clear: both;
 }
-#wrap-in #main .post .sumbox02 #topnews div dl dd {
+#wrap-in #main .post .sumbox02 .topnews div dl dd {
     padding-left: 130px;
 
 }
-#wrap #wrap-in #main .post .sumbox02 #topnews div dl {
+#wrap #wrap-in #main .post .sumbox02 .topnews div dl {
     clear: both;
 }
 
-#wrap #wrap-in #main .post .sumbox02 #topnews div dl dt a .attachment-110x110.wp-post-image {
+#wrap #wrap-in #main .post .sumbox02 .topnews div dl dt a .attachment-110x110.wp-post-image {
     border-top-style: none;
     border-right-style: none;
     border-bottom-style: none;
@@ -1203,7 +1203,7 @@ div#breadcrumb div {
 #wp-calendar tbody tr #today {
     background-color: #CCC;
 }
-.sumbox02 #topnews div dl dd .saisin {
+.sumbox02 .topnews div dl dd .saisin {
     font-size: 16px;
 }
 #container #wrap #wrap-in #main #snsbox03 .sns03 .snsb {

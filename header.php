@@ -37,7 +37,7 @@
 <?php else: ?>
 
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=2" media="all">
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=4" media="all">
 <?php endif; ?>
 
 <?php wp_head(); ?>

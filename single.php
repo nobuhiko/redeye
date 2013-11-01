@@ -65,7 +65,7 @@ if ( is_array($related_posts) ) :
     <dl>
         <dt>
         <a href="<?= get_permalink($related->ID); ?>" title="<?= $related->post_title; ?>">
-            <?php if (!has_post_thumbnail($related->ID)): ?>
+            <?php if (has_post_thumbnail($related->ID)): ?>
                 <?= get_the_post_thumbnail($related->ID, 'thumb110'); ?>
             <?php else: ?>
                 <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="110px" />

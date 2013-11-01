@@ -915,7 +915,8 @@ a {
     border-bottom-style: none;
     border-left-style: none;
     margin-bottom:10px;
-}#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dt {
+}
+#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dt {
     text-align: center;
     padding-top: 20px;
     padding-right: 20px;
@@ -1066,8 +1067,8 @@ a {
 
 #container #wrap #wrap-in #side .topnews .motto {
     clear: both;
-
 }
+
 .motto a {
     color: #FFF;
     text-decoration: none;
@@ -1092,44 +1093,26 @@ a {
 関連記事
 ------------------------------------*/
 
-#container #wrap #wrap-in #side #ad1 div .topnews div dl dd a {
-    color: #000;
-    font-weight: bold;
+.topnews dl {
+    padding:10px;
+    clear: both;
 }
 
-#container #wrap #wrap-in #main .post .amabox.clearfix dl dd .amataitoru a {
-    font-weight: bold;
+.topnews dl dd a {
     color: #000;
     text-decoration: none;
 }
-#container #wrap #wrap-in #main .post .amabox.clearfix dl dd .amataitoru {
-    /*font-size: 16px;*/
-    line-height: 25px;
-}
-#container #wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .saisin a {
-    color: #000;
-    text-decoration: none;
-}
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl dt {
+
+.topnews dl dt {
     float: left;
     width: 112px;
-    clear: both;
 }
-#wrap-in #main .post .sumbox02 .topnews div dl dd {
+.topnews dl dd {
     padding-left: 130px;
-
-}
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl {
-    clear: both;
+    font-weight: bold;
+    font-size:110%;
 }
 
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl dt a .attachment-110x110.wp-post-image {
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    padding: 0px;
-}
 #wrap-in #main .post .amabox.clearfix dl dt {
     text-align: center;
     padding: 20px;

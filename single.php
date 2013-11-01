@@ -61,29 +61,25 @@ if ( is_array($related_posts) ) :
 <h4 class="kanren">関連記事</h4>
 <div class="sumbox02">
 <div class="topnews">
-<div>
     <?php foreach ( $related_posts as $related ) : ?>
-<dl>
-    <dt>
-    <a href="<?= get_permalink($related->ID); ?>" title="<?= $related->post_title; ?>">
-        <?php if ( has_post_thumbnail($related->ID) ): // サムネイルを持っているときの処理 ?>
-            <?= get_the_post_thumbnail($related->ID, 'thumb110'); ?>
-        <?php else: // サムネイルを持っていないときの処理 ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="110px" />
-        <?php endif; ?>
-        </a>
-    </dt>
-    <dd>
-        <h4 class="saisin">
-            <a href="<?= get_permalink($related->ID); ?>"><?= $related->post_title; ?></a></h4>
-        <p class="basui">
-        <?php echo mb_substr(strip_tags($related->post_content),0,35).'...'; ?></p>
-        <p class="motto"><a href="<?= get_permalink($related->ID); ?>">記事を読む</a></p>
-    </dd>
-</dl>
-<?php endforeach; ?>
-
-    </div>
+    <dl>
+        <dt>
+        <a href="<?= get_permalink($related->ID); ?>" title="<?= $related->post_title; ?>">
+            <?php if (!has_post_thumbnail($related->ID)): ?>
+                <?= get_the_post_thumbnail($related->ID, 'thumb110'); ?>
+            <?php else: ?>
+                <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="110px" />
+            <?php endif; ?>
+            </a>
+        </dt>
+        <dd>
+            <a href="<?= get_permalink($related->ID); ?>"><?= $related->post_title; ?></a>
+            <p class="basui">
+            <?php echo mb_substr(strip_tags($related->post_content),0,35).'...'; ?></p>
+            <p class="motto"><a href="<?= get_permalink($related->ID); ?>">記事を読む</a></p>
+        </dd>
+    </dl>
+    <?php endforeach; ?>
 </div>
 </div>
 <!--/関連記事-->

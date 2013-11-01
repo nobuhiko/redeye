@@ -1057,75 +1057,38 @@ comment
     color:#ff0000;
 }
 
-/*------------news---------*/
+/*-------- .topnews -------------*/
 
 .topnews dt {
-    color: #1A7AE8;
     margin-bottom: 5px;
     padding-bottom: 5px;
     float: left;
-
-    clear: both;
 }
 
-.topnews dt {
-    color: #66A512;
-}
-
-#side .topnews dd {
+.topnews dd {
+    line-height: 1.4em;
+    font-weight: bold;
     padding-left: 120px;
-    /*line-height: 22px;*/
-    /*font-weight: bold;*/
-    padding-left: 110px;
     padding-bottom: 5px;
     color: #666666;
 }
-
-.topnews div {
-
-    padding: 10px;
-    margin-bottom: 10px;
-
+.topnews dd p {
+    line-height: 1.3em;
+    font-weight: normal;
 }
-.topnews div dl dd a {
+
+.topnews dl dd a {
     color: #1a1a1a;
     text-decoration: none;
 }
 
-.topnews div {
+.topnews dl {
     padding: 10px;
-    margin-bottom: 10px;
+    clear: both;
 }
 
 /*-------------------------*/
-.topnews div dl {
-    clear: both;
-}
-#container #wrap #wrap-in #side .topnews div dl dd a:hover {
-    color: #900;
-    text-decoration: underline;
-}
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .saisin {
-    background-color: #FFF;
-    margin: 0px;
-    padding: 0px;
-}
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .basui {
-    font-weight: normal;
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 10px;
-    margin-left: 0px;
-}
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .basui a {
-    color: #06C;
-    text-decoration: underline;
-    font-weight: bold;
-}
 
-#wrap #wrap-in #main .post .sumbox02 .topnews div dl dd .basui a:hover {
-    color: #900;
-}
 #footer #footer-in #gadf {
     padding: 10px;
 }

@@ -3,12 +3,12 @@
 <?php /*--- パンくず --- */?>
 <?php if ( function_exists( 'bread_crumb' ) ) { bread_crumb(); } ?>
 </div><!--/kuzu-->
-<div class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemtype="http://schema.org/BlogPosting">
+<div class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <!--ループ開始-->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="kizi">
 
-<h1 itemprop="name" class="entry-title"><a itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
 <div class="blogbox">
 <p>
@@ -16,7 +16,7 @@
 </p>
 </div>
 
-<div itemprop="articleBody">
+<div>
 <?php the_content(); ?>
 </div>
 

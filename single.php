@@ -3,7 +3,7 @@
 <?php /*--- パンくず --- */?>
 <?php if ( function_exists( 'bread_crumb' ) ) { bread_crumb(); } ?>
 </div><!--/kuzu-->
-<div class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
 <!--ループ開始-->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="kizi">
@@ -68,7 +68,7 @@ if ( is_array($related_posts) ) :
             <?php if (has_post_thumbnail($related->ID)): ?>
                 <?= get_the_post_thumbnail($related->ID, 'thumb110'); ?>
             <?php else: ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="110px" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="110" height="110">
             <?php endif; ?>
             </a>
         </dt>

@@ -79,7 +79,6 @@ function register_user_script() {
 }
 add_action('wp_enqueue_scripts','register_user_script');
 
-
 //アイキャッチサムネイル
 add_theme_support('post-thumbnails');
 add_image_size('eyecatch', 150, 150, true);

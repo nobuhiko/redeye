@@ -67,17 +67,14 @@ a {
     text-decoration: underline;
 }
 
-
 a:hover {
     color: #C03;
 }
-
 
 a:hover img {
     opacity: 0.8;
     filter: alpha(opacity=80);
     -ms-filter: "alpha( opacity=80 )";
-
 }
 
 /* clearfix */

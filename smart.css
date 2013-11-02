@@ -171,19 +171,6 @@ a:hover{
 基本のhタグ
 ------------------------------*/
 
-/*ヘッダータイトル*/
-
-#container #header #header-in #h-l h1 {
-    font-size: 12px;
-    color: #666;
-    font-weight: normal;
-}
-
-#header #header-in #h-l h1 a {
-    color: #FFF;
-    text-decoration: none;
-}
-
 /*記事タイトル*/
 
 .entry-content .entry-title-ac {
@@ -290,6 +277,27 @@ h2 {
 基本構造
 ------------------------------*/
 
+#header {
+    background: #999;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 50px;
+}
+
+a.header {
+    background: center center no-repeat transparent;
+    background-image: url(images/menu-2.png);
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 10px;
+}
+
 #container,#footer{
     width: 100%;
 
@@ -311,7 +319,7 @@ h2 {
     padding:10px;
 }
 
-#header-in,#navi-in,#gazou-in {
+#gazou-in {
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 0px;
@@ -350,14 +358,6 @@ h2 {
     margin-bottom: 20px;
     padding-top: 10px;
 
-}
-
-
-#container #header #header-in #h-l .sitename {
-    font-size: 210%; /* 26px; */
-    color: #fff;
-    margin-bottom: 10px;
-    line-height: 30px;
 }
 
 .entry-content .blog_info.contentsbox ul {
@@ -425,30 +425,12 @@ SIDE
 #footer {
 
 }
-#container #header #header-in #h-l {
-    padding-top:0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-    margin-top:-10px;
-}
-
-#container #header #header-in #h-r {
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 0px;
-    padding-left: 10px;
-
-}
 
 #container #wrap {
     padding-top: 0px;
     padding-bottom: 20px;
 }
 
-#container #header {
-
-}
 #side-in ul li a:hover {
     color: #3279BB;
 }
@@ -631,11 +613,6 @@ div.affix {
 .blog_info.contentsbox .clearfix {
     margin: 0px;
     padding: 0px;
-}
-#container #header #header-in #h-l .sitename a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
 }
 body {
     background-color: #f3f3f3;

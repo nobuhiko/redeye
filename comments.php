@@ -5,7 +5,7 @@ die ('Please do not load this page directly. Thanks!');
 if (!empty($post->post_password)) { //投稿にパスワードがかかっている場合
 if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) { //さらに、パスワードとCookieが一致しない場合 ?>
 <p class="nocomments">この投稿はパスワードで保護されています。コメントを見るには、パスワードを入力してください。<p>
-<?php return; 
+<?php return;
 }
 }
 ?>
@@ -40,8 +40,8 @@ if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) { //さらに
       <?php if ($comment->comment_approved == '0') : //承認待ちコメントの場合 ?>
       <p class="note"><strong>このコメントは、現在管理人の承認待ちです。</strong></p>
       <?php endif; ?>
-      
-      <?php echo get_avatar($comment, '40'); //アバター画像を表示させる ?> 
+
+      <?php echo get_avatar($comment, '40'); //アバター画像を表示させる ?>
       <?php comment_text(); //コメント本文 ?>
       <dl class="metadata">
         <dt>投稿日時：</dt>
@@ -84,5 +84,3 @@ if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) { //さらに
 <?php endif; //コメントが投稿できるかどうかの判断を終了 ?>
 <?php endif; //コメントがオープンかどうかの判断を終了 ?>
 </div><!-- END div#comments -->
-
-<!-- X:S ZenBackWidget --><script type="text/javascript">document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//nob-log.info&nsid=111935142657809798%3A%3A111935150442471907&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));</script><!-- X:E ZenBackWidget -->

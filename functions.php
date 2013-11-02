@@ -71,16 +71,9 @@ function register_user_script() {
                 array('jquery'), '1.8.0', true);
         } else {
             wp_enqueue_style('style', get_template_directory_uri() . '/smart.css');
-            wp_enqueue_style('mmenu', get_template_directory_uri() . '/css/jquery.mmenu.all.css');
-
-            wp_enqueue_script(
-                'mmenu',
-                get_template_directory_uri() . '/js/jquery.mmenu.min.all.js',
-                array('jquery'), '1.8.0');
-
             wp_enqueue_script(
                 'stinger',
-                get_template_directory_uri() . '/smartbase.js',
+                get_template_directory_uri() . '/js/smart.js',
                 array('jquery'), '1.8.0');
 
         }

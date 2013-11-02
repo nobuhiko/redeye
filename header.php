@@ -43,7 +43,6 @@
 <div id="container">
     <header id="header">
         <?php if (is_mobile()): ?>
-        <a href="#menu" class="header"></a>
         <?php bloginfo('name'); ?>
         <?php else: ?>
         <?php if (is_home()) : ?>
@@ -57,9 +56,11 @@
         <?php endif; ?>
     </header><!-- /#header -->
 
+<?php if (!is_mobile()) : ?>
     <nav id="menu">
         <?php wp_nav_menu(array('theme_location' => 'navbar', 'depth' => (is_mobile()) ? 0 : 1));?>
     </nav>
+<?php endif; ?>
 
     <div id="wrap">
         <div id="wrap-in">

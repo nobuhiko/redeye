@@ -28,7 +28,7 @@
 </div>
 <?php wp_footer(); ?>
 <!-- ページトップへ戻る -->
-<div id="page-top"><a href="#wrapper">PAGE TOP ↑</a></div>
+<div id="page-top"><a href="#container">PAGE TOP ↑</a></div>
 <!-- ページトップへ戻る　終わり -->
 
 <?php $permalink = (is_home()) ? home_url() : get_permalink(); ?>

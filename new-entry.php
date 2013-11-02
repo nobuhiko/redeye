@@ -17,7 +17,7 @@
         </dt>
         <dd>
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-            <p><?php echo mb_substr(strip_tags(get_the_excerpt()),0,35).'...'; ?></p>
+            <p><?php echo mb_substr(strip_tags(get_the_excerpt()),0,15).'...'; ?></p>
         </dd>
     </dl>
 

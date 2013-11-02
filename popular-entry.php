@@ -15,7 +15,7 @@
         </dt>
         <dd>
             <a href="<?php echo $p['post_permalink']; ?>" title="<?php echo $p['post_title']; ?>"><?php echo $p['post_title']; ?></a>
-            <p><?php echo mb_substr(strip_tags(get_post_field('post_content', $p['post_id'])),0,35).'...'; ?></p>
+            <?php /*<p><?php echo mb_substr(strip_tags(get_post_field('post_content', $p['post_id'])),0,35).'...'; ?></p>*/?>
         </dd>
     </dl>
 <?php endforeach; ?>

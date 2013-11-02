@@ -91,8 +91,8 @@ if ( is_array($related_posts) ) :
 <!--ページナビ-->
 <div class="p-navi">
 <p>
-PREV : <?php previous_post_link_plus( array('in_same_tax' => true, 'format' => '%link') );?><br/>
-NEXT : <?php next_post_link_plus( array('in_same_tax' => true, 'format' => '%link') );?></p>
+PREV : <?php previous_post_link_plus( array('in_same_cat' => true, 'format' => '%link') );?><br/>
+NEXT : <?php next_post_link_plus( array('in_same_cat' => true, 'format' => '%link') );?></p>
 </div>
 <?php if (!is_mobile ()) : ?>
 <!-- X:S ZenBackWidget --><script type="text/javascript">document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//nob-log.info&nsid=111935142657809798%3A%3A111935150442471907&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));</script><!-- X:E ZenBackWidget -->

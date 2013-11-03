@@ -72,6 +72,10 @@ function register_user_script() {
         } else {
             wp_enqueue_style('style', get_template_directory_uri() . '/smart.css');
             wp_enqueue_script(
+                'pageslide',
+                get_template_directory_uri() . '/jquery.pageslide.js',
+                array('jquery'), '1.8.0', true);
+            wp_enqueue_script(
                 'stinger',
                 get_template_directory_uri() . '/js/smart.js',
                 array('jquery'), '1.8.0');
@@ -82,7 +86,6 @@ function register_user_script() {
     }
 }
 add_action('wp_enqueue_scripts','register_user_script');
-
 
 //アイキャッチサムネイル
 add_theme_support('post-thumbnails');

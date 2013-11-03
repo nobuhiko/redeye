@@ -31,9 +31,13 @@
 <?php if (is_mobile()) : ?>
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=0" media="all">
+
 <?php else: ?>
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=0" media="all">
 <?php endif; ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jquery.pageslide.css" media="all">
 
 <?php wp_head(); ?>
 </head>
@@ -42,25 +46,20 @@
 
 <div id="container">
     <header id="header">
-        <?php if (is_mobile()): ?>
-        <?php bloginfo('name'); ?>
-        <?php else: ?>
-        <?php if (is_home()) : ?>
-        <h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
-        <?php else: ?>
-        <span class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></span>
-        <?php endif; ?>
-        <?php if(get_header_image()): ?>
-        <img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" />
-        <?php endif; ?>
+        <?php $tag = (is_home()) ? 'h1' : 'p'; ?>
+        <<?= $tag ?> class="sitename">
+        <a class="open" href="#nav">Menu</a>
+        <a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></<?= $tag; ?>>
+
+        <?php //カスタムヘッダー画像// ?>
+        <?php if(get_header_image() && !is_mobile()): ?>
+        <p id="headimg"><img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" /></p>
         <?php endif; ?>
     </header><!-- /#header -->
 
-<?php if (!is_mobile()) : ?>
-    <nav id="menu">
-        <?php wp_nav_menu(array('theme_location' => 'navbar', 'depth' => (is_mobile()) ? 0 : 1));?>
+    <nav id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'navbar', 'depth' => (is_mobile()) ? '-1' : '1'));?>
     </nav>
-<?php endif; ?>
 
     <div id="wrap">
         <div id="wrap-in">

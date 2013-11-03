@@ -1,5 +1,5 @@
 </div><!-- /#main -->
-<?php if(!is_mobile()) get_sidebar(); ?>
+<?php if (!is_mobile()) get_sidebar(); ?>
 
 <div class="clear"></div><!-- /.cler -->
 </div><!-- /#wrap-in -->

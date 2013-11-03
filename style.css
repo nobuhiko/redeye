@@ -67,17 +67,14 @@ a {
     text-decoration: underline;
 }
 
-
 a:hover {
     color: #C03;
 }
-
 
 a:hover img {
     opacity: 0.8;
     filter: alpha(opacity=80);
     -ms-filter: "alpha( opacity=80 )";
-
 }
 
 /* clearfix */
@@ -248,20 +245,14 @@ img.float-right {
 基本のhタグ
 ------------------------------*/
 
-#header {
-    padding-top:10px;
-}
-
-#header img {
-    padding:10px 0;
-}
-
-header .sitename {
+#container .sitename {
     font-size: 30px;
     color: #fff;
-    display:inline;
+    padding: 10px 0;
+    margin: 0;
+    line-height: 30px;
 }
-header .sitename a {
+#container .sitename a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
@@ -270,11 +261,11 @@ header .sitename a {
 /*記事タイトル*/
 
 .entry-title {
-margin: 25px 0;
-line-height: 1.4em;
-letter-spacing: -0.07em;
-font-size: 210%;
-color: #2F2F40;
+    margin: 25px 0;
+    line-height: 1.4em;
+    letter-spacing: -0.07em;
+    font-size: 210%;
+    color: #2F2F40;
 }
 .entry .entry-content .entry-title a:hover {
     text-decoration: underline;
@@ -425,7 +416,7 @@ h3 a:hover {
 基本構造
 ------------------------------*/
 
-#header, #wrap-in, #menu, #footer-in, #gazou-in {
+#header, #wrap-in, #nav, #footer-in, #gazou-in {
     width: 950px;
     margin-right: auto;
     margin-left: auto;
@@ -1102,7 +1093,7 @@ nav#menu {
     padding:5px 0px;
 }
 
-#menu li {
+#nav li {
     font-size: 13px;
     padding-left: 10px;
     display: inline;
@@ -1113,23 +1104,16 @@ nav#menu {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-#menu li li {
-    font-size: 13px;
-    padding-left: 10px;
-    display: inline;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px; 
-    border: none;
-}
-
-#menu li a {
+#nav li a {
     color: #333;
     text-decoration: none;
 }
 
-#menu li a:hover {
+.menu-navigation-container {
+    overflow: hidden;
+}
+
+#nav li a:hover {
     text-decoration: underline;
 }
 
@@ -1363,3 +1347,19 @@ div#breadcrumb div {
     padding: 5px;
     color: #FFF;
 }
+
+.open {
+    display: none;
+    float: left;
+    width: 40px;
+    height: 30px;
+    margin-right: 10px;
+    background: url(images/menu.png) center center no-repeat #333;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -border-radius: 8px;
+    box-shadow: inset 0 0 3px #000;
+    text-indent: -999999px;
+    border: 0;
+}
+

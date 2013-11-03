@@ -76,7 +76,7 @@ function register_user_script() {
             wp_enqueue_script(
                 'stinger',
                 get_template_directory_uri() . '/smartbase.js',
-                array('jquery'), '1.8.0', true);
+                array('jquery'), '1.8.1', true);
         }
     }
 }

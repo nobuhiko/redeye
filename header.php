@@ -31,7 +31,7 @@
 <?php if (is_mobile()) : ?>
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=0" media="all">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=0.1" media="all">
 
 <?php else: ?>
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">

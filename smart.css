@@ -277,27 +277,6 @@ h2 {
 基本構造
 ------------------------------*/
 
-#header {
-    background: #999;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
-    height: 40px;
-    padding: 0 50px;
-}
-
-a.header {
-    background: center center no-repeat transparent;
-    background-image: url(images/menu-2.png);
-    display: block;
-    width: 32px;
-    height: 32px;
-    position: absolute;
-    left: 10px;
-}
-
 #container,#footer{
     width: 100%;
     overflow: hidden;

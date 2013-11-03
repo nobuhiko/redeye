@@ -70,6 +70,10 @@ function register_user_script() {
                 array('jquery'), '1.8.0', true);
         } else {
             wp_enqueue_script(
+                'pageslide',
+                get_template_directory_uri() . '/jquery.pageslide.js',
+                array('jquery'), '1.8.0', true);
+            wp_enqueue_script(
                 'stinger',
                 get_template_directory_uri() . '/smartbase.js',
                 array('jquery'), '1.8.0', true);

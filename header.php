@@ -31,78 +31,37 @@
 <?php if (is_mobile()) : ?>
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-precomposed.png">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=6" media="all">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=0" media="all">
 
 <?php else: ?>
 
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=7" media="all">
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=0" media="all">
 <?php endif; ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jquery.pageslide.css" media="all">
 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-<?php if (is_mobile()) : ?>
-<!--アコーディオン-->
-<div class="pcnone">
-<div id="s-navi">
-<section class="list6">
-<dl class="acordion">
-<dt class="trigger"><p><span class="op">About</span></p></dt>
-<dd class="acordion_tree" style="display: none;">
-<?php wp_nav_menu(array('theme_location' => 'navbar'));?>
-<div class="clear"></div>
-</dd>
-</dl>
-</section>
-</div></div>
-<!--/アコーディオン-->
-<?php endif; ?>
-
 <div id="container">
+    <header id="header">
+        <?php $tag = (is_home()) ? 'h1' : 'p'; ?>
+        <<?= $tag ?> class="sitename">
+        <a class="open" href="#nav">Menu</a>
+        <a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></<?= $tag; ?>>
 
-<div id="header">
-    <div id="header-in">
-        <div id="h-l">
-        <?php if (is_home()) : ?>
-        <h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></h1>
-        <?php else : ?>
-        <p class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a></p>
+        <?php //カスタムヘッダー画像// ?>
+        <?php if(get_header_image() && !is_mobile()): ?>
+        <p id="headimg"><img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" /></p>
         <?php endif; ?>
+    </header><!-- /#header -->
 
-        <?php if (is_home()) : ?>
-        <p class="descr"><?php bloginfo('description'); ?></p>
-        <?php else : ?>
-        <p class="descr"><?php bloginfo('description'); ?></p>
-        <?php endif; ?>
-        </div><!-- /#h-l -->
-    </div><!-- /#header-in -->
-</div><!-- /#header -->
-<div id="gazou">
-<div id="gazou-in">
+    <nav id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'navbar', 'depth' => (is_mobile()) ? '-1' : '1'));?>
+    </nav>
 
-<?php //カスタムヘッダー画像// ?>
-<?php if(get_header_image()): ?>
-<p id="headimg"><img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" /></p>
-<?php endif; ?>
-
-</div><!-- /#gazou-in -->
-</div><!-- /#gazou -->
-<div class="clear"></div>
-
-<?php if (!is_mobile()): ?>
-<!--pcnavi-->
-<div class="smanone">
-<div id="navi-in">
-<?php wp_nav_menu(array('theme_location' => 'navbar'));?>
-<div class="clear"></div>
-</div></div>
-<!--/pcnavi-->
-<?php endif; ?>
-
-<div id="wrap">
-<div id="wrap-in">
-<div id="main">
+    <div id="wrap">
+        <div id="wrap-in">
+            <div id="main">

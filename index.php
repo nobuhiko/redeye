@@ -2,14 +2,8 @@
 
 <div class="post">
 
-
 <!--ループ開始-->
-<div id="dendo">
-
-
-</div><!-- /#dendo -->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
 
 <div class="entry">
 <div class="sumbox">
@@ -22,11 +16,8 @@ array( 'alt' =>$title, 'title' => $title)); ?>
 <?php else: // サムネイルを持っていないときの処理 ?>
 <img src="<?php echo get_template_directory_uri(); ?>/images/no-img.png" alt="no image" title="no image" width="150" height="150" />
 <?php endif; ?>
-
-
 </a>
 </div><!-- /.sumbox -->
-
 
 <div class="entry-content">
 <h3 class="entry-title-ac">  <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
@@ -39,8 +30,6 @@ array( 'alt' =>$title, 'title' => $title)); ?>
 <p class="motto"><a class="more-link" href="<?php the_permalink() ?>">続きを見る</a></p>
 
 </div><!-- .entry-content -->
-
-<div class="clear"></div>
 
 </div><!--/entry-->
 

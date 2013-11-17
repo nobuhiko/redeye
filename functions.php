@@ -238,3 +238,46 @@ register_sidebars(1,
     ));
 
 if ( ! isset( $content_width ) ) $content_width = 546;
+
+
+// カテゴリIDの取得（カテゴリー別ランキング用）
+add_action('wp_head', 'get_current_category');
+
+function get_current_category()
+{
+    global $_curcat;
+    $cate = null;
+    if( is_category() ) {
+        //カテゴリー表示だったら
+
+        $cat_now = get_the_category();
+        // 親の情報を＄cat_nowに格納
+        $cate = $cat_now[0];
+
+    } else if (is_single() ) {
+        //シングルページ表示だったら
+        $cates = get_the_category();
+        $i = 0;
+        $use_category = 0;
+        foreach ($cates as $cate) {
+            //未分類を除外した配列の一番初めのカテゴリを選択
+            if($cate->category_parent > 0 && $use_category == 0) {
+                $use_category = $i;
+            }
+            $i++;
+        }
+        $cate = $cates[$use_category];
+    }
+    //カテゴリーのオブジェクトごと保持
+    $_curcat = $cate;
+    return $cate;
+}
+
+function get_top_category( $cat_id, $ancestors = array() ) {
+	$cat = get_category( $cat_id );
+	$ancestors = $cat;
+	if ( $cat->parent != 0 ) {
+		$ancestors = get_category_ancestors( $cat->parent, $ancestors );
+	}
+	return $ancestors;
+}

@@ -29,10 +29,11 @@ $args = array(
 );
 
 global $_curcat;
-$cat = get_top_category($_curcat->term_id);
-$children = implode(',', get_categories('fields=ids&child_of=' . $cat->term_id));
-$args['cat'] = $children . ',' . $cat->term_id;
-
+if ($_curcat->term_id) {
+    $cat = get_top_category($_curcat->term_id);
+    $children = implode(',', get_categories('fields=ids&child_of=' . $cat->term_id));
+    $args['cat'] = $children . ',' . $cat->term_id;
+}
 // 関数の実行
 wpp_get_mostpopular($args);
 ?>

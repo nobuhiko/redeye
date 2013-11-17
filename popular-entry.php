@@ -17,8 +17,8 @@ $args = array(
     'stats_date' => 0, // 日付を表示する(1)/表示しない(0)
     'stats_date_format' => 'Y.n.j', // 日付のフォーマット
     'stats_category' => 0, // カテゴリを表示する(1)/表示しない(0)
-    'wpp_start' => "<ul class='popular_posts'>", // リストの開始タグ
-    'wpp_end' => "</ul>", // リストの終了タグ
+    //'wpp_start' => "<ul class='popular_posts'>", // リストの開始タグ
+    //'wpp_end' => "</ul>", // リストの終了タグ
     'post_html' => // HTMLの出力フォーマット
     "
     <dl>
@@ -30,9 +30,12 @@ $args = array(
 
 global $_curcat;
 if ($_curcat->term_id) {
-    $cat = get_top_category($_curcat->term_id);
-    $children = implode(',', get_categories('fields=ids&child_of=' . $cat->term_id));
-    $args['cat'] = $children . ',' . $cat->term_id;
+    if ($_curcat->category_parent != 0) {
+        $_curcat = get_top_category($_curcat->term_id);
+    }
+    $catids = get_categories('fields=ids&child_of=' . $_curcat->term_id);
+    $catids[] = $_curcat->term_id;
+    $args['cat'] = implode(',', $catids);
 }
 // 関数の実行
 wpp_get_mostpopular($args);

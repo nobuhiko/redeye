@@ -277,7 +277,7 @@ function get_top_category( $cat_id, $ancestors = array() ) {
 	$cat = get_category( $cat_id );
 	$ancestors = $cat;
 	if ( $cat->parent != 0 ) {
-		$ancestors = get_category_ancestors( $cat->parent, $ancestors );
+		$ancestors = get_top_category( $cat->parent, $ancestors );
 	}
 	return $ancestors;
 }

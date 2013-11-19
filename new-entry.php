@@ -17,6 +17,6 @@
         <p><?php echo mb_substr(strip_tags(get_the_excerpt()),0,25).'...'; ?></p>
         </dd>
     </dl>
-    <?php endwhile; wp_reset_postdata(); ?>
+    <?php endwhile; wp_reset_query(); ?>
     <p class="motto"><a href="<?php echo home_url(); ?>/">→もっと見る</a></p>
 </div>

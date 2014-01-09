@@ -12,11 +12,7 @@
 
 </div>
 <h3><a href="<?php echo home_url(); ?>/">
-<?php if (is_home()) : ?>
-<?php bloginfo('name'); ?>
-<?php else : ?>
 <?php wp_title(''); ?>
-<?php endif; ?>
 </a></h3>
 
 <h4><a href="<?php echo home_url(); ?>/">

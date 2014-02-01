@@ -17,7 +17,7 @@
 <?php } elseif (is_year()) { ?>
 年別アーカイブ：<?php echo get_the_time('Y年'); ?>
 <?php } elseif (is_author()) { ?>
-投稿者アーカイブ：<?php echo esc_html(get_queried_object()->display_name); ?></h2>
+投稿者アーカイブ：<?php echo esc_html(get_queried_object()->display_name); ?>
 <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 ブログアーカイブ
 <?php } ?>」 一覧</h2>

@@ -449,10 +449,6 @@ h3 a:hover {
     font-size: 16px;
 }
 
-#container #wrap #wrap-in #side #side-in #search #searchform #s {
-    width: 150px;
-}
-
 .p-navi p {
     font-weight: bold;
 }
@@ -1007,6 +1003,7 @@ comment
 #footer #footer-in #gadf {
     padding: 10px;
 }
+/*
 table tr td {
     padding: 10px;
     border-bottom-width: 1px;
@@ -1017,7 +1014,7 @@ table tr td {
     border-left-color: #999;
     font-size: 14px;
     line-height: 25px;
-}
+}*/
 #main .post table {
     border-top-width: 1px;
     border-right-width: 1px;
@@ -1153,42 +1150,18 @@ nav#menu {
 /*-----------------------------
 検索フォーム
 -----------------------------*/
-
-#container #wrap #wrap-in #search {
-    padding-top: 20px;
-    padding-bottom: 0px;
+.searchform {
+    width:250px;
+    padding:6px 15px 6px 30px;
+    margin:3px;
+    background: #fff url('./images/search.png') no-repeat 8px 6px;
 }
 
-
-#s  {
-    width: 250px;
-    height: 24px;
-    border: none;
-    color: #333;
-    padding-top: 4px;
-    padding-right: 10px;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    background-color: #CCC;
-    font-size: 14px;
-    border-radius:0;
-}  
-#searchsubmit {
-    position: absolute;
-    top: 0;
-    _top: 1px;
-    left: 250px;
-    border-radius:0;
-}  
-*:first-child + html #searchsubmit    {  
-    top: 1px;  
-}  
-
-
-#container #wrap #wrap-in #side #search #searchform {
-    position: relative;
+.rounded {
+    border-radius:15px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
 }
-
 
 /*------------------*/
 

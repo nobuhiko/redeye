@@ -17,15 +17,10 @@ if (!is_mobile()) {
 <div id="gadf">
 
 </div>
-<h3><a href="<?php echo home_url(); ?>/">
-<?php wp_title(''); ?>
-</a></h3>
-
-<h4><a href="<?php echo home_url(); ?>/">
-<?php bloginfo('description'); ?></a></h4>
+<h3><?php wp_title(''); ?></h3>
 <!--このリンクは外す事は禁止しております-->
 <p class="stinger"><a href="http://wp-stinger.com" rel="nofollow">WordPress-Theme STINGER3</a></p>
-<p class="copy">Copyright &copy; <?php bloginfo('name');?> <?php the_date('Y');?> All Rights Reserved.</p>
+<p class="copy">Copyright &copy; <a href="<?php echo home_url(); ?>/"><?php bloginfo('name');?></a> <?php the_date('Y');?> All Rights Reserved.</p>
 </div><!-- /#footer-in -->
 </div>
 <?php wp_footer(); ?>

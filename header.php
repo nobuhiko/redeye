@@ -43,7 +43,7 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/smart.css?v=0.1" media="all">
 <?php else: ?>
 <meta name="viewport" content="width=1024, maximum-scale=1, user-scalable=yes">
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=0" media="all">
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?v=1" media="all">
 <?php endif; ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/jquery.pageslide.css" media="all">
 
